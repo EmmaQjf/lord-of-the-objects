@@ -38,19 +38,22 @@ function makeMiddleEarth() {
   console.log("1: makeMiddleEarth");
 
   // 1. create a section tag with an id of middle-earth
+   const sectionMiddleEarth = document.createElement("section");
+   sectionMiddleEarth.setAttribute("id", "middle-earth");
 
   // 2. use a for loop to iterate over the lands array that does the following:
-
+   for (let land of lands) {
   //   2a. creates an article tag (there should be one for each land when the loop is done)
-
+     const newArticle = document.createElement("article");
   //   2b. gives each land article an `id` tag of the corresponding land name
-
+    newArticle.setAttribute("id", land.toLowerCase());
   //   2c. includes an h1 with the name of the land inside each land article
-
+    newArticle.innerHTML =  `<h1>${land}</h1>`;
   //   2d. appends each land to the middle-earth section
-
+    sectionMiddleEarth.appendChild(newArticle);
+ }
   // 3. append the section to the body of the DOM.
-
+       document.querySelector("body").append(sectionMiddleEarth);
 }
 
 
@@ -263,6 +266,7 @@ function thereAndBackAgain() {
 // This code is loading all of the event listeners for the buttons in your application.
 // =====================================
 
+// 
 
 document.getElementById('chapter-1').addEventListener('click', makeMiddleEarth);
 document.getElementById('chapter-2').addEventListener('click', makeHobbits);
