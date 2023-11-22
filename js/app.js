@@ -53,7 +53,7 @@ function makeMiddleEarth() {
     sectionMiddleEarth.appendChild(newArticle);
  }
   // 3. append the section to the body of the DOM.
-       document.querySelector("body").append(sectionMiddleEarth);
+       document.body.appendChild(sectionMiddleEarth);
 }
 
 
@@ -70,7 +70,13 @@ function makeHobbits() {
   console.log("2: makeHobbits");
 
   // display an `unordered list` of hobbits in the shire
-
+  const hobbitsList = document.createElement("ul");
+   for (let hobbit of hobbits) {
+      let liElement = document.createElement("li");
+      liElement.innerHTML = `<li class = "hobbit">${hobbit}</li>`;
+      hobbitsList.appendChild(liElement);
+   }
+ document.getElementById("the-shire").appendChild(hobbitsList);
   // give each hobbit a class of `hobbit`
 
   // hint: create a 'ul' outside the loop into which to append the 'li's
