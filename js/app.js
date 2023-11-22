@@ -73,7 +73,9 @@ function makeHobbits() {
   const hobbitsList = document.createElement("ul");
    for (let hobbit of hobbits) {
       let liElement = document.createElement("li");
-      liElement.innerHTML = `<li class = "hobbit">${hobbit}</li>`;
+      liElement.classList.add("hobbit");
+      liElement.innerHTML = hobbit;
+      // liElement.innerHTML = `<li class = "hobbit">${hobbit}</li>`;
       hobbitsList.appendChild(liElement);
    }
  document.getElementById("the-shire").appendChild(hobbitsList);
@@ -100,7 +102,7 @@ function keepItSecretKeepItSafe() {
    const divElement = document.createElement("div");
    divElement.setAttribute("id","the-ring");
   // give the div a class of `'magic-imbued-jewelry'`
-    divElement.setAttribute("class","magic-imbued-jewelry");
+  divElement.classList.add("magic-imbued-jewelry");
   // add the ring as a child of `Frodo`
   console.log(document.querySelector(".hobbit"));
   document.querySelector(".hobbit").appendChild(divElement);
@@ -119,11 +121,18 @@ function makeBaddies() {
   console.log("4: makeBaddies");
 
   // display an unordered list of baddies in Mordor
-
-  // give each of the baddies a class of "baddy"
+    const baddiescontainer = document.createElement("ul");
+    for (let baddy of baddies) {
+      const baddyEl = document.createElement("li");
+      // give each of the baddies a class of "baddy"
+      baddyEl.classList.add("baddy");
+      baddyEl.innerHTML = baddy;
+      baddiescontainer.appendChild(baddyEl);
+    }
 
   // remember to append them to Mordor
-
+  console.log(baddiescontainer);
+  document.getElementById("mordor").appendChild(baddiescontainer);
 }
 
 // COMMIT YOUR WORK
