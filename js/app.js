@@ -238,7 +238,12 @@ function forgeTheFellowShip() {
 function theBalrog() {
   console.log("9: theBalrog");
   // change the `'Gandalf'` text to `'Gandalf the White'`
+  const gandalfEl = document.querySelectorAll(".buddy")[0];
+  gandalfEl.innerHTML = "Gandalf the White";
   // apply the following style to the element, make the // background 'white', add a grey border
+  gandalfEl.style.backgroundColor = "white";
+  gandalfEl.style.borderColor = "red";
+  gandalfEl.style.borderWidth = "thick";
 }
 
 // COMMIT YOUR WORK
@@ -252,8 +257,10 @@ function theBalrog() {
 function hornOfGondor() {
   console.log("10: hornOfGondor");
   // pop up an alert that the horn of gondor has been blown
+  alert("The horn of gondor has been blown")
   // Boromir's been killed by the Uruk-hai!
   // Remove `Boromir` from the Fellowship
+  document.querySelectorAll(".buddy")[4].remove();
 }
 
 // COMMIT YOUR WORK
